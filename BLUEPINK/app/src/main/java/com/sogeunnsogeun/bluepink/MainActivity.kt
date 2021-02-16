@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         content_btn.setOnClickListener {
-
+            ContentFragment().show(supportFragmentManager, "contentfragment")
         }
 
     }

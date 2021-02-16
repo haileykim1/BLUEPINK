@@ -41,4 +41,5 @@ dependencies {
     kapt "android.arch.persistence.room:compiler:2.2.6"
     kapt "android.arch.lifecycle:compiler:2.2.6"
     kaptTest "android.arch.persistence.room:testing:2.2.6"
+    implementation "androidx.gridlayout:gridlayout:1.0.0"
 }
