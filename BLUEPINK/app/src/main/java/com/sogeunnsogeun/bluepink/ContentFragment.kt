@@ -36,8 +36,9 @@ class ContentFragment : AppCompatDialogFragment() {
         super.onActivityCreated(savedInstanceState)
 
         view_log.setOnClickListener {
-            Toast.makeText(context, "대화로그", Toast.LENGTH_SHORT).show()
-            println("대화로그")
+            msgLogListFragment().show(fragmentManager!!, "msgLogListFragment")
+            this.dismiss()
+
         }
 
         mind_test.setOnClickListener {
