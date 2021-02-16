@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="20">
 
-        <androidx.recyclerview.widget.RecyclerView
+        <View
             android:id="@+id/dialog_log"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -24,7 +24,7 @@
             app:layout_constraintBottom_toTopOf="@+id/dialog_window"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"></androidx.recyclerview.widget.RecyclerView>
+            app:layout_constraintTop_toTopOf="parent"></View>
 
         <ImageView
             android:id="@+id/imageView"
@@ -93,9 +93,12 @@
             android:layout_marginBottom="25dp"
             android:text="TextView"
             android:visibility="invisible"
+            android:gravity="center"
+            android:cursorVisible="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/button_background"
             app:layout_constraintTop_toBottomOf="@+id/dialog_window" />
 
 
