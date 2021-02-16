@@ -55,6 +55,12 @@ class ContentFragment : AppCompatDialogFragment() {
             Toast.makeText(context, "챗봇 변경", Toast.LENGTH_SHORT).show()
             println("챗봇 변경")
         }
+        copyright.setOnClickListener {
+
+        }
+        developer_info.setOnClickListener {
+
+        }
     }
 
     override fun onCreateView(
