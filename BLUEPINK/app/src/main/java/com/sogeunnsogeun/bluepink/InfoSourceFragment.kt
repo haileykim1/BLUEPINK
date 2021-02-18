@@ -5,11 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatDialogFragment
 
 /**
  * A simple [Fragment] subclass.
  */
-class InfoSourceFragment : Fragment() {
+class InfoSourceFragment : AppCompatDialogFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

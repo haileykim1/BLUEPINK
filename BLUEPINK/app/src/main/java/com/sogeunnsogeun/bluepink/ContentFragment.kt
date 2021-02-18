@@ -56,10 +56,12 @@ class ContentFragment : AppCompatDialogFragment() {
             this.dismiss()
         }
         copyright.setOnClickListener {
-
+            InfoSourceFragment().show(fragmentManager!!, "InfosourceFragment")
+            this.dismiss()
         }
         developer_info.setOnClickListener {
-
+            DeveloperInfoFragment().show(fragmentManager!!, "DeveloperInfoFragment")
+            this.dismiss()
         }
     }
 
