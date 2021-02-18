@@ -51,8 +51,8 @@ class ContentFragment : AppCompatDialogFragment() {
         }
 
         update_bot.setOnClickListener {
-            Toast.makeText(context, "챗봇 변경", Toast.LENGTH_SHORT).show()
-            println("챗봇 변경")
+            ChatbotOptionFragment().show(fragmentManager!!, "ChatbotOptionFragment")
+            this.dismiss()
         }
         copyright.setOnClickListener {
 

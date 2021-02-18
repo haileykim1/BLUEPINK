@@ -12,9 +12,10 @@ object UserInfo {
     const val DEFAULT_NAME = "사용자"
 
     const val BOTNUM = "botnum"
-    const val DEFAULT_BOTNUM = "one"
+    const val DEFAULT_BOTNUM = "cat1"
 
     var sUserName: String = "사용자"
+    var sBotNum:String = "cat1"
 
 
 

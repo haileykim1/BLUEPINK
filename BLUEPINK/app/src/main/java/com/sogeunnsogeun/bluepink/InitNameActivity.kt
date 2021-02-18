@@ -16,7 +16,7 @@ class InitNameActivity : AppCompatActivity(){
         initNameSkipBtn.setOnClickListener {
             UserInfo.set(UserInfo.NAME, UserInfo.DEFAULT_NAME)
             UserInfo.set(UserInfo.NAME_PASSED, true)
-
+            UserInfo.set(UserInfo.BOTNUM, UserInfo.DEFAULT_BOTNUM)
             nextActivity()
         }
 
@@ -28,6 +28,7 @@ class InitNameActivity : AppCompatActivity(){
 
             UserInfo.set(UserInfo.NAME, initNameText.text)
             UserInfo.set(UserInfo.NAME_PASSED, true)
+            UserInfo.set(UserInfo.BOTNUM, UserInfo.DEFAULT_BOTNUM)
 
 
             nextActivity()

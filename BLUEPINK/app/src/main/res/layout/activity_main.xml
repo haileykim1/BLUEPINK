@@ -14,7 +14,7 @@
 
 
         <ImageView
-            android:id="@+id/chatbotImage"
+            android:id="@+id/chatbot_image"
             android:layout_width="272dp"
             android:layout_height="376dp"
             android:layout_marginStart="67dp"
@@ -38,7 +38,7 @@
             app:layout_constraintBottom_toTopOf="@+id/sent_msg"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chatbotImage">
+            app:layout_constraintTop_toBottomOf="@+id/chatbot_image">
 
 
             <TextView

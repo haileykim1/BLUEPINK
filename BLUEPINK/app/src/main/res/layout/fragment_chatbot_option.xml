@@ -22,8 +22,9 @@
             android:id="@+id/bot_cat1"
             android:layout_width="150dp"
             android:layout_height="match_parent"
-            android:text="고양이1"
-            android:layout_margin="5dp"/>
+            android:layout_margin="5dp"
+            android:checked="true"
+            android:text="고양이1" />
         <RadioButton
             android:id="@+id/bot_cat2"
             android:layout_width="150dp"

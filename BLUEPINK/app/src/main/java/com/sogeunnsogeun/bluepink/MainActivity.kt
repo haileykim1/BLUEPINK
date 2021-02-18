@@ -49,6 +49,12 @@ class MainActivity : AppCompatActivity() {
             ContentFragment().show(supportFragmentManager, "contentfragment")
         }
 
+        when(UserInfo.get(UserInfo.BOTNUM)){
+            "cat1" -> chatbot_image.setImageResource(R.drawable.cat1_normal)
+            "cat2" -> chatbot_image.setImageResource(R.drawable.cat2)
+            "dog1" -> chatbot_image.setImageResource(R.drawable.dog1)
+        }
+
     }
 
 
@@ -81,5 +87,14 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    public fun changeBot(num:Int){
+
+        when(num){
+            0 -> chatbot_image.setImageResource(R.drawable.cat1_normal)
+            1 -> chatbot_image.setImageResource(R.drawable.cat2)
+            2 -> chatbot_image.setImageResource(R.drawable.dog1)
+        }
+
+    }
 
 }
