@@ -42,8 +42,8 @@ class ContentFragment : AppCompatDialogFragment() {
         }
 
         mind_test.setOnClickListener {
-            Toast.makeText(context, "심리검사", Toast.LENGTH_SHORT).show()
-            println("심리검사")
+            (context as MainActivity).chatWithBot("심리검사")
+            this.dismiss()
         }
 
         update_user.setOnClickListener {

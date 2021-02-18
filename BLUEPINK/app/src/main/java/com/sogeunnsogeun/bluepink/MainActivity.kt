@@ -112,12 +112,14 @@ class MainActivity : AppCompatActivity() {
         edit_msg.text = null
 
         //단비 API POST method로 사용
-        val str:String = "{\"input_sentence\" : \"" + msg + "\"}"
-        chatWithBot(str)
+
+        chatWithBot(msg)
 
     }
 
-    fun chatWithBot(message:String){
+    public fun chatWithBot(message:String){
+        val str:String = "{\"input_sentence\" : \"" + message + "\"}"
+
         val url: String = "https://danbee.ai/chatflow/chatbot/v2.0/7bce08fc-8747-4077-9c72-2d714d3c0e3a/message.do"
         Thread({
             URL(url)
@@ -129,7 +131,7 @@ class MainActivity : AppCompatActivity() {
                     requestMethod = "POST"
                     doOutput = true
                     val outputWriter = OutputStreamWriter(outputStream)
-                    outputWriter.write(message)
+                    outputWriter.write(str)
                     outputWriter.flush()
 
                 }.let {
