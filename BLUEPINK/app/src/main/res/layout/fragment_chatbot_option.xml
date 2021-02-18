@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".ChatbotOptionFragment"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="챗봇 유형을 선택해주세요"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"/>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/bot_cat1"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:text="고양이1"
+            android:layout_margin="5dp"/>
+        <RadioButton
+            android:id="@+id/bot_cat2"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="고양이2"
+            android:layout_margin="5dp"/>
+
+        <RadioButton
+            android:id="@+id/bot_dog"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="강아지"
+            android:layout_margin="5dp"/>
+    </RadioGroup>
+
+
+</LinearLayout>

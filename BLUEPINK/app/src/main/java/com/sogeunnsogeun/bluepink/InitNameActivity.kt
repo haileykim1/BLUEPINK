@@ -29,6 +29,7 @@ class InitNameActivity : AppCompatActivity(){
             UserInfo.set(UserInfo.NAME, initNameText.text)
             UserInfo.set(UserInfo.NAME_PASSED, true)
 
+
             nextActivity()
         }
     }

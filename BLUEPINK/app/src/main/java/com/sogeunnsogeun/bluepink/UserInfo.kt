@@ -11,7 +11,12 @@ object UserInfo {
     const val NAME_PASSED = "name_passed"
     const val DEFAULT_NAME = "사용자"
 
+    const val BOTNUM = "botnum"
+    const val DEFAULT_BOTNUM = "one"
+
     var sUserName: String = "사용자"
+
+
 
     private fun initializeUserInfo():JSONObject{
         var data:String = FileManager.readFile()
