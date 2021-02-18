@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         init()
         msgDB = MessageItemDB.getDBInstance(this)
 
+        //Toast.makeText(this, temp, Toast.LENGTH_SHORT).show()
     }
 
     private fun init() {

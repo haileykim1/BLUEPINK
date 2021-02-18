@@ -48,7 +48,7 @@ class ContentFragment : AppCompatDialogFragment() {
 
         update_user.setOnClickListener {
             Toast.makeText(context, "사용자 설정", Toast.LENGTH_SHORT).show()
-            println("사용자 설정")
+            UserInfo.setUserName("김소양")
         }
 
         update_bot.setOnClickListener {
