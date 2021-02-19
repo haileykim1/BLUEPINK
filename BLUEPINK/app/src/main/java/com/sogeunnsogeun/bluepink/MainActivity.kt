@@ -328,7 +328,6 @@ class MainActivity : AppCompatActivity() {
                                 newMsg.msgContent = resultMsg.toString()
                                 newMsg.sentTime = System.currentTimeMillis()
                                 msgDB?.messageItemDao()?.insert(newMsg)
-                                msgDB?.messageItemDao()?.deleteAll()
                             }
 
                             val addThread = Thread(addRunnable)
