@@ -344,12 +344,75 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun botWelcome(){
-       /* val values = mapOf("user_id" to UserInfo.get(UserInfo.NAME))
+    fun botWelcome() {
 
-        val apiService = Res*/
+        val url: String =
+            "https://danbee.ai/chatflow/chatbot/v2.0/7bce08fc-8747-4077-9c72-2d714d3c0e3a/welcome.do"
+        Thread {
+            URL(url)
+                .openConnection()
+                .let {
+                    it as HttpURLConnection
+                }.apply {
+                    setRequestProperty("Content-Type", "application/json;charset=UTF-8")
+                    requestMethod = "POST"
+                    doOutput = true
+                    val outputWriter = OutputStreamWriter(outputStream)
+                    outputWriter.write("{\"user_id\" : \"soguennsoguen\", ")
+                    outputWriter.write("\"session_id\" : \"22420259\"}")
+                    outputWriter.flush()
 
+                }.let {
+                    if (it.responseCode == 200) it.inputStream else it.errorStream
+                }.let { streamToRead ->
+                    BufferedReader(InputStreamReader(streamToRead)).use {
+                        val response = StringBuffer()
 
+                        var inputLine = it.readLine()
+                        while (inputLine != null) {
+                            response.append(inputLine)
+                            inputLine = it.readLine()
+                        }
+                        it.close()
+                        var temp = response.toString()
+                        Log.i("응답", temp);
+                        runOnUiThread {
+                            var result1 = JSONObject(
+                                JSONObject(temp).getJSONObject("responseSet")
+                                    .getJSONObject("result").getJSONArray("result").get(0)
+                                    .toString()
+                            )
+                            var resultMsg = result1.get("message").toString()
+                            dialog_TV.text = "\" $resultMsg \""
+                            val optionList =
+                                JSONArray(result1.getJSONArray("optionList").toString())
+                            // 선택지 버튼
+                            btnCnt = optionList.length()
+                            for (i in 0..optionList.length() - 1) {
+                                var newBtn: Button = Button(this)
+                                newBtn.layoutParams = ViewGroup.LayoutParams(
+                                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                                    LinearLayout.LayoutParams.WRAP_CONTENT
+                                )
+                                newBtn.text =
+                                    JSONObject(optionList[i].toString())["label"].toString()
+                                newBtn.setId(i)
+
+                                dialog_window.addView(newBtn)
+                                arr.add(newBtn)
+
+                                newBtn.setOnClickListener {
+                                    arr.forEach {
+                                        dialog_window.removeView(it)
+                                    }
+                                    arr.clear()
+                                    callApibyType(JSONObject(optionList[i].toString()))
+                                }
+                            }
+                        }
+                    }
+                }
+        }.start()
     }
 
     public fun changeBot(num:Int){
