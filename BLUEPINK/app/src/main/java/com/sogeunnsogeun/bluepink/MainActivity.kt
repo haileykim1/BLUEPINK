@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
     var arr = mutableListOf<Button>()
     var arr2 = mutableListOf<Button>()
     var call_flow = ""
+    public var forMsgLog:List<MessageItem>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -349,7 +350,7 @@ class MainActivity : AppCompatActivity() {
                                 newMsg.msgContent = resultMsg.toString()
                                 newMsg.sentTime = System.currentTimeMillis()
                                 msgDB?.messageItemDao()?.insert(newMsg)
-                                msgDB?.messageItemDao()?.deleteAll()
+                                forMsgLog =  msgDB?.messageItemDao()?.getAll()
                             }
 
                             val addThread = Thread(addRunnable)
@@ -430,6 +431,18 @@ class MainActivity : AppCompatActivity() {
                                     callApibyType(JSONObject(optionList[i].toString()))
                                 }
                             }
+                            //DB 추가
+                            val addRunnable = Runnable{
+                                val newMsg = MessageItem()
+                                newMsg.isChatbots = true
+                                newMsg.msgContent = resultMsg.toString()
+                                newMsg.sentTime = System.currentTimeMillis()
+                                msgDB?.messageItemDao()?.insert(newMsg)
+                                forMsgLog =  msgDB?.messageItemDao()?.getAll()
+                            }
+
+                            val addThread = Thread(addRunnable)
+                            addThread.start()
                         }
                     }
                 }
