@@ -320,6 +320,27 @@ class MainActivity : AppCompatActivity() {
                                     callApibyIntent(JSONObject(another_result[i].toString())["intent_id"].toString())
                                 }
                             }
+                            
+                            // 캐로셀 리스트 버튼
+                            /*var carouse_list = JSONArray(JSONObject(temp).getJSONObject("responseSet").getJSONObject("result").getJSONArray("carouselList").toString())
+                            for (i in 0..optionList.length() - 1){
+                                var carouse_option_list = carouse_list
+                                var newBtn: Button = Button(this)
+                                newBtn.layoutParams = ViewGroup.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT)
+                                newBtn.text = JSONObject(optionList[i].toString())["label"].toString()
+                                newBtn.setId(i)
+
+                                dialog_window.addView(newBtn)
+                                arr.add(newBtn)
+
+                                newBtn.setOnClickListener {
+                                    arr.forEach{
+                                        dialog_window.removeView(it)
+                                    }
+                                    arr.clear()
+                                    callApibyType(JSONObject(optionList[i].toString()))
+                                }
+                            }*/
 
                             //DB 추가
                             val addRunnable = Runnable{
