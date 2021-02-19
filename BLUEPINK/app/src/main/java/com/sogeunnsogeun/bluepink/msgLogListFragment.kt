@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatDialogFragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_msg_log_list.*
 
 /**
@@ -15,9 +16,9 @@ import kotlinx.android.synthetic.main.fragment_msg_log_list.*
 class msgLogListFragment : AppCompatDialogFragment() {
 
     lateinit var adapter:MsgLogAdapter
-    private var msgDB: MessageItemDB? = null
 
-        override fun onCreateView(
+
+    override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
@@ -28,22 +29,14 @@ class msgLogListFragment : AppCompatDialogFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        msgDB = MessageItemDB.getDBInstance(context!!)
-        val addRunnable = Runnable{
-            val temp = msgDB?.messageItemDao()?.getAll()!!
-            adapter = MsgLogAdapter(temp)
-            temp.forEach{
-                println(it)
-            }
-            rcyView?.adapter = adapter
-            rcyView.invalidate()
+
+        adapter = MsgLogAdapter((context as MainActivity).forMsgLog!!)
+        rcyView?.adapter = adapter
+
+        (context as MainActivity).forMsgLog!!.forEach {
+            println(it)
         }
-
-        val addThread = Thread(addRunnable)
-        addThread.start()
-
-
-
+        rcyView.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
     }
 
 
