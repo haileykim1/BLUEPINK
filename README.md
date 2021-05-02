@@ -17,5 +17,5 @@
 역할 : 심리 검사 + 처방 관련 데이터 수집, 챗봇 구축
     
     
-## 5일간의 개발 일지
+## 개발 일지
 https://www.notion.so/sogeunsogeunbluepink/6-BLUEPINK-83385346b225460ba32ba009ea1f4522
