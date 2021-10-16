@@ -1,5 +1,5 @@
 # BLUEPINK
-2021 Konkuk AI Hackathon Project
+2021 AI Hackathon Project
 
 ## 서비스 소개
 - 심리 질의응답을 통한 성격 분류와 감정 분류 수행
