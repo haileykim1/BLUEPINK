@@ -1,6 +1,8 @@
 # BLUEPINK
 2021 AI Hackathon Project
 
+[img](https://github.com/haileykim1/BLUEPINK/blob/master/%EA%B1%B4%EA%B5%AD%EB%8C%80AI%ED%95%B4%EC%BB%A4%ED%86%A4%20%EC%86%8C%EA%B0%9C%EC%84%9C(SW06_%EC%86%8C%EA%B7%BC%EC%86%8C%EA%B7%BC).png)
+
 ## 서비스 소개
 - 심리 질의응답을 통한 성격 분류와 감정 분류 수행
 - AI Hub의 한국어 감정 대화를 학습시킨 챗봇을 이용한 감정 심리 상담
